@@ -11,3 +11,4 @@ default['dnsmasq']['dns_options'] = []
 default['dnsmasq']['managed_hosts'] = {}
 default['dnsmasq']['managed_hosts_bag'] = 'managed_hosts'
 default['dnsmasq']['user'] = 'dnsmasq'
+default['dnsmasq']['hosts_file_restarts'] = false

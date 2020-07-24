@@ -17,6 +17,6 @@ managed_hosts.each do |ip, host|
     hostname host.shift
     aliases host unless host.empty?
     comment 'dnsmasq managed entry'
-    notifies :restart, 'service[dnsmasq]'
+    notifies :restart, 'service[dnsmasq]' if node['dnsmasq']['hosts_file_restarts']
   end
 end
