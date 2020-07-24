@@ -19,6 +19,7 @@ include_recipe 'dnsmasq::dns' if node['dnsmasq']['enable_dns']
 include_recipe 'dnsmasq::dhcp' if node['dnsmasq']['enable_dhcp']
 
 service 'dnsmasq' do
-  action [:enable, :start]
+  provider ::Chef::Provider::Service::Systemd
   status_command '/bin/systemctl is-active --quiet dnsmasq'
+  action [:enable, :start]
 end
